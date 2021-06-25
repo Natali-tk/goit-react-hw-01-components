@@ -1,15 +1,14 @@
 import PropTypes from 'prop-types';
+import defaultImage from './default.jpg';
 import style from './FriendList.module.css';
 
-
-
-const Friend = ({ avatar, name, isOnline, id }) => {
+const Friend = ({ avatar = defaultImage, name, isOnline }) => {
   return (
-    <div>
+    <li className={style.item}>
       <span className={isOnline ? style.online : style.offline}></span>
       <img className={style.avatar} src={avatar} alt={name} width="48" />
       <p className={style.name}>{name}</p>
-    </div>
+    </li>
   );
 };
 
